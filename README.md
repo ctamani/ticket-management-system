@@ -26,7 +26,7 @@ Users can create and view their own tickets, while administrators can manage tic
 
 ### Login
 
-![Login Screen](images/login.png)
+![Login Screen](images/Login.png)
 
 ### Administrator Dashboard
 
