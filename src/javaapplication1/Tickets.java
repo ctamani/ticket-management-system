@@ -104,12 +104,6 @@ public class Tickets extends JFrame implements ActionListener {
         mnuItemViewById.addActionListener(this);
         mnuItemClose.addActionListener(this);
 
-        /*
-         * continue implementing any other desired sub menu items (like 
-         * for update and delete sub menus for example) with similar 
-         * syntax & logic as shown above
-        */
-
         // Style the menus
         UIStyle.styleMenu(mnuAdmin);
         UIStyle.styleMenu(mnuTickets);
@@ -214,10 +208,7 @@ public class Tickets extends JFrame implements ActionListener {
             refreshTicketTable();
             setStatus("Viewing tickets for: " + (chkIfAdmin ? "all users (admin)" : loggedInUser));
         }
-        /*
-         * continue implementing any other desired sub menu items (like for update and
-         * delete sub menus for example) with similar syntax & logic as shown above
-         */
+  
         else if (e.getSource() == mnuItemDelete) {
             String ticketIdStr = JOptionPane.showInputDialog(null, "Enter ticket id to delete");
 
@@ -272,7 +263,7 @@ public class Tickets extends JFrame implements ActionListener {
                     int ticketId = Integer.parseInt(ticketIdStr);
 
                     JTable jt = new JTable(
-                        ticketsJTable.buildTableModel(
+                        TicketsJTable.buildTableModel(
                             dao.readRecordByTicketNum(ticketId, loggedInUser, chkIfAdmin)
                         )
                     );
@@ -323,7 +314,7 @@ public class Tickets extends JFrame implements ActionListener {
         try {
             // Use JTable built in functionality to build a table model and
             // display the table model off your result set!!!
-            JTable jt = new JTable(ticketsJTable.buildTableModel(dao.readRecords(loggedInUser, chkIfAdmin)));
+            JTable jt = new JTable(TicketsJTable.buildTableModel(dao.readRecords(loggedInUser, chkIfAdmin)));
             jt.setFillsViewportHeight(true);
             UIStyle.styleTable(jt);
 

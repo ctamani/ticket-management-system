@@ -7,7 +7,7 @@ import java.util.Vector;
 
 import javax.swing.table.DefaultTableModel;
  
-public class ticketsJTable {
+public class TicketsJTable {
 
 	public static DefaultTableModel buildTableModel(ResultSet rs) throws SQLException {
 

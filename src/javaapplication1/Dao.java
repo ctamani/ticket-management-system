@@ -170,7 +170,6 @@ public class Dao {
         return results;
     }
 
-    // continue coding for updateRecords implementation
     public int updateRecords(int ticketId, String newDescription) {
         int status = 0;
 
@@ -194,7 +193,6 @@ public class Dao {
         return status;
     }
 
-    // continue coding for deleteRecords implementation
     public int deleteRecords(int ticketId) {
         int status = 0;
 
